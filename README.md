@@ -1,4 +1,4 @@
-ser2ip
+ser2ip [![Build Status](https://travis-ci.org/spark/ser2ip.svg?branch=master)](https://travis-ci.org/spark/ser2ip)
 ======
 
 A simple full-duplex serial-port to TCP/IP gateway in Go

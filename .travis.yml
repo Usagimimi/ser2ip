@@ -1,0 +1,21 @@
+language: go
+go: 1.7.x
+
+sudo: false
+
+before_script:
+  - go vet ./...
+
+install:
+  - export GOPATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace:$GOPATH"
+  - export PATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace/bin:$PATH"
+
+script: ./build.sh
+
+deploy:
+  provider: releases
+  api_key: ${GITHUB_API_KEY}
+  file: "ser2ip-*"
+  skip_cleanup: true
+  on:
+    tags: true
