@@ -14,7 +14,7 @@ func main() {
 	nrArgs := len(args)
 
 	if nrArgs < 3 {
-		fmt.Println("Usage: ser2ip serialportname baudrate port\n")
+		fmt.Println("Usage: ser2ip serialportname baudrate port")
 		return
 	}
 
@@ -22,13 +22,13 @@ func main() {
 
 	baudrate, err := strconv.Atoi(args[1])
 	if err != nil || baudrate < 100 {
-		fmt.Fprintf(os.Stderr, "Invalid baudrate: ", args[1])
+		fmt.Fprintf(os.Stderr, "Invalid baudrate: %s", args[1])
 		return
 	}
 
 	portnr, err := strconv.Atoi(args[2])
 	if err != nil || portnr < 1 || portnr > 65535 {
-		fmt.Fprintf(os.Stderr, "Invalid port number: ", args[2])
+		fmt.Fprintf(os.Stderr, "Invalid port number: %s", args[2])
 		return
 	}
 
